@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sequelize Search</title>
+</head>
+<body>
+  <h1>Search Users</h1>
+  <form id="searchForm">
+    <input type="text" id="searchQuery" placeholder="Search for users..." required />
+    <input type="text" id="limitQuery" placeholder="Limit..." required />
+    <!--<input type="text" id="offsetQuery" placeholder="Offset..." required />-->
+    <button type="submit">Search</button>
+  </form>
+
+  <h2>Results:</h2>
+  <ul id="userList"></ul>
+
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('searchQuery').value;
+      const limit = document.getElementById('limitQuery').value;
+      //const offset = document.getElementById('offsetQuery').value;
+
+      const response = await fetch('/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, limit })
+      });
+
+      const users = await response.json();
+
+      const userList = document.getElementById('userList');
+      userList.innerHTML = '';
+
+      if (users.length === 0) {
+        userList.innerHTML = '<li>No users found</li>';
+      } else {
+        userList.innerHTML = '<li>Found '+users+' users</li>';
+      }
+    });
+  </script>
+</body>
+</html>

