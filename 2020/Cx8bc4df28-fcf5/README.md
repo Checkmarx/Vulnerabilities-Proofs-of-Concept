@@ -4,7 +4,7 @@
 - **Package Repository**: [debug GitHub](https://github.com/debug-js/debug)
 - **Package Manager**: [NPM debug](https://www.npmjs.com/package/debug)
 
-## Steps to Reproduce:
+## Steps to Reproduce
 
 1. Install a vulnerable version of `debug`: ```npm i debug@2.6.9```
 2. Run the exploit: ```node exploit.js```

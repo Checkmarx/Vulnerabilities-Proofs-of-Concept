@@ -4,7 +4,7 @@
 - **Package Repository**: [Fat-Free GitHub](https://github.com/bcosca/fatfree)
 - **Package Manager**: [Packagist Fat-Free](https://packagist.org/packages/bcosca/fatfree)
 
-## Steps to Reproduce:
+## Steps to Reproduce
 
 1. Install a vulnerable version of `bcosca/fatfree`: ```composer require bcosca/fatfree:3.8.0```
 2. Run the exploit: ```php exploit.php```

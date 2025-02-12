@@ -4,7 +4,7 @@
 - **Package Repository**: [Sequelize GitHub](https://github.com/sequelize/sequelize)
 - **Package Manager**: [NPM Sequelize](https://www.npmjs.com/package/sequelize)
 
-## Steps to Reproduce:
+## Steps to Reproduce
 
 1. Install the local dependencies: ```npm install```
 2. Start the website locally: ```node index.js```

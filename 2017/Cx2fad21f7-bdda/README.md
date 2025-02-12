@@ -4,7 +4,7 @@
 - **Package Repository**: [mPDF GitHub](https://github.com/mpdf/mpdf)
 - **Package Manager**: [Packagist mPDF](https://packagist.org/packages/mpdf/mpdf)
 
-## Steps to Reproduce:
+## Steps to Reproduce
 
 1. Install a vulnerable version of `mpdf/mpdf`: ```composer require mpdf/mpdf:7.0.0-beta2```
 2. Start the website locally: ```php -S localhost:8000```
