@@ -11,3 +11,5 @@
 3. In the browser, navigate to ```http://localhost:3000```
 4. In the search functionality, search for `$password$`
 5. See that all users whose username equals their password are displayed.
+6. To demonstrate a possible authentication bypass, search for `$username$`
+7. Observe that all users appear in the search results. If this was a login functionality, you could potentially gain unauthorized access.
