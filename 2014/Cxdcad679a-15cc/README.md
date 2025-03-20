@@ -1,7 +1,7 @@
 # POC for Vulnerability in PHP package `monolog/monolog`
 
-- Issue: #458
-- PR: #448
+- Issue: [#458] (https://github.com/Seldaek/monolog/issues/458)
+- PR: [#448] (https://github.com/Seldaek/monolog/pull/448)
 - Package Repository: [monolog GitHub](https://github.com/Seldaek/monolog)
 - Package Manager: [PHP monolog/monolog](https://packagist.org/packages/monolog/monolog)
 
