@@ -9,4 +9,4 @@
 1. Install a vulnerable version of `sanitize-html`: ```npm install sanitize-html@1.27.4```
 2. Run the demonstration server: ```node index.js```
 3. In the browser, navigate to ```http://localhost:3000```
-4. Check that if you click any of the links, Javascript alert popup is triggered.
+4. Check that as soon as the content loads, both Javascript alert popups are triggered.

@@ -4,7 +4,7 @@ var sanitizeHtml = require('sanitize-html');
 const payload1 = '<input value="&lt;script&gt;alert(\'XSS 1 triggered!\')&lt;/script&gt;">';
 const payload2 = '<input value="<script>alert(\'XSS 2 triggered!\')</script>">';
 
-const cleanInput = (payload) => sanitizeHtml(
+const transformInput = (payload) => sanitizeHtml(
     payload,
     {
         allowedTags: [ 'u' ],
@@ -22,13 +22,13 @@ const cleanInput = (payload) => sanitizeHtml(
 );
 
 const server = http.createServer((req, res) => {
-    const cleanInput1 = cleanInput(payload1);
-    const cleanInput2 = cleanInput(payload2);
+    const transformedInput1 = transformInput(payload1);
+    const transformedInput2 = transformInput(payload2);
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(
-        "<p>"+cleanInput1+"</p>" +
-        "<p>"+cleanInput2+"</p>"
+        "<p>"+transformedInput1+"</p>" +
+        "<p>"+transformedInput2+"</p>"
     );
 });
 
